@@ -7,7 +7,7 @@ function Navbar(){
             <a href="/" className='siteTitle'>Emmy Fong</a>
             <ul>
                 <li>
-                    <a href='/about'>About</a>
+                    <a href='#about'>About</a>
                 </li>
                 <li>
                     <a href='/projects'>Projects</a>

@@ -39,7 +39,3 @@ body {
 .navbar li a:hover {
     color: rgb(59, 236, 104);
 }
-
-.navbar:active {
-    background-color: rgb(59, 236, 104);
-}
