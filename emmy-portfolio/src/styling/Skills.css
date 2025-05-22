@@ -2,6 +2,7 @@
   padding: 6rem 2rem;
   text-align: center;
   background-color: #f9f9f9;
+  position: relative;
 }
 
 .skills-section h2 {

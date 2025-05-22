@@ -20,6 +20,7 @@ html {
   display: flex;
   align-items: center;
   gap: 2rem;
+  opacity: 0.95;
 }
 
 .nav-list {

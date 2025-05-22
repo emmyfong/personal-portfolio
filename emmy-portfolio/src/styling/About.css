@@ -1,6 +1,7 @@
 .about {
   min-height: 60vh;
   padding: 5rem 2rem;
+  position: relative;
 }
 
 section {
