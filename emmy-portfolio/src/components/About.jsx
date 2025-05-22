@@ -4,6 +4,12 @@ function About() {
     return (
         <section id='about' className='about'>
             <h1>About Me</h1>
+            <p>
+                Hi! My name is Emmy. I'm currently a Computer Science student at Simon Fraser University. My interests include Software Development, artificial intelligence, machine and deep learning, full stack web development, and game development.
+            </p>
+            <p>
+                I'm currently an undergraduate student working towards a Bachelors of Science in Computer Science at SFU as well as a Master in Finance with Zhejiang University. 
+            </p>
         </section>
     )
 }
