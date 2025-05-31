@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(240, 240, 240);
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0.95;
+}
+
+.nav-list {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  position: relative;
+  z-index: 1;
+  color: rgb(104, 104, 104);
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  transition: color 0.3s ease;
+}
+
+.navbar li a.active {
+  color: black;
+}
+
+.navbar li a:hover {
+  color: black;
+}
+
+.indicator {
+  position: absolute;
+  height: 100%;
+  background-color: white;
+  border-radius: 999px;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 0;
+  transform: translateX(0);
+  transition: transform 0.3s ease, width 0.3s ease;
+}
