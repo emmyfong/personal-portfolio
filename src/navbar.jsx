@@ -1,50 +1,37 @@
 // src/components/Navbar.jsx
-import './navbar.css';
-import { useState, useRef, useEffect } from 'react';
+import "./navbar.css";
+import { useState, useRef, useEffect } from "react";
 
-const sections = [
-  'home',
-  'about',
-  'skills',
-  'projects',
-  'experiences',
-  'education',
-  'contact',
-];
-
-export default function Navbar() {
-  const [activeSection, setActiveSection] = useState('home');
+export default function Navbar({ scrollRefs = {} }) {
+  const [activeSection, setActiveSection] = useState("home");
   const indicatorRef = useRef(null);
-  const linkRefs = sections.reduce((acc, id) => {
-    acc[id] = useRef(null);
-    return acc;
-  }, {});
 
-  // 1) Reposition the pill whenever activeSection changes
+  // Guarantee we always have an array of keys (e.g. ["home","about","skills", ...])
+  const sections = Object.keys(scrollRefs);
+
+  // On each activeSection change, move the "pill" under that link
   useEffect(() => {
-    const currentLink = linkRefs[activeSection]?.current;
+    const currentLinkEl = document.getElementById(`nav-${activeSection}`);
     const indicator = indicatorRef.current;
-    if (currentLink && indicator) {
-      const { offsetLeft, offsetWidth } = currentLink;
+    if (currentLinkEl && indicator) {
+      const { offsetLeft, offsetWidth } = currentLinkEl;
       indicator.style.transform = `translateX(${offsetLeft}px)`;
       indicator.style.width = `${offsetWidth}px`;
     }
   }, [activeSection]);
 
-  // 2) Scroll listener that picks the section whose top has passed
-  //    30% down the viewport—works both on scroll-down and scroll-up
+  // On scroll, detect which section is roughly mid-screen and setActiveSection
   useEffect(() => {
     const handleScroll = () => {
       const midY = window.innerHeight / 2;
       let current = sections[0];
 
-      sections.forEach((id) => {
-        const el = document.getElementById(id);
+      sections.forEach((sectionId) => {
+        const el = scrollRefs[sectionId]?.current;
         if (el) {
           const rect = el.getBoundingClientRect();
-          // if this section covers the vertical center…
           if (rect.top <= midY && rect.bottom >= midY) {
-            current = id;
+            current = sectionId;
           }
         }
       });
@@ -52,25 +39,35 @@ export default function Navbar() {
       setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // initialize on load
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // run once on mount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollRefs]);
+
+  // Clicking a nav button scrolls to that section smoothly
+  const handleClick = (sectionId) => {
+    const el = scrollRefs[sectionId]?.current;
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(sectionId);
+    }
+  };
 
   return (
     <nav className="navbar">
       <ul className="nav-list">
         <div className="indicator" ref={indicatorRef} />
-        {sections.map((section) => (
-          <li key={section}>
-            <a
-              href={`#${section}`}
-              ref={linkRefs[section]}
-              className={activeSection === section ? 'active' : ''}
-              onClick={() => setActiveSection(section)}
+
+        {/* One <li> + <button> per section (home, about, skills, etc.) */}
+        {sections.map((sectionId) => (
+          <li key={sectionId}>
+            <button
+              id={`nav-${sectionId}`}
+              className={activeSection === sectionId ? "active" : ""}
+              onClick={() => handleClick(sectionId)}
             >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </a>
+              {sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}
+            </button>
           </li>
         ))}
       </ul>

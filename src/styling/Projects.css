@@ -2,6 +2,12 @@
   background-color: #f9f9f9;
 }
 
+.projects h1 {
+  z-index: 1;
+  margin-top: 1rem;
+  color: #0f172a;
+}
+
 .projects-section {
   padding: 4rem 2rem;
 }

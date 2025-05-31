@@ -51,7 +51,7 @@ function Skills() {
 
   return (
     <section id="skills" className="skills-section">
-      <h2>Skills</h2>
+      <h1>Skills</h1>
       <div className="tabs">
         {Object.keys(skillsByDomain).map((category) => (
           <button
