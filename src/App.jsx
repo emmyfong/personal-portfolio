@@ -14,7 +14,6 @@ function AppWrapper() {
   const [showNavbar, setShowNavbar] = useState(true);
 
   useEffect(() => {
-    // Hide Navbar on /archive, show on everything else
     setShowNavbar(location.pathname !== "/archive");
   }, [location.pathname]);
 

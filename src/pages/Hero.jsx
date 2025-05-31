@@ -3,7 +3,6 @@ import '../styling/Hero.css';
 import profilePic from '../assets/profile.png'
 import { Typewriter } from 'react-simple-typewriter'
 import { BsArrowDown } from 'react-icons/bs'
-import setActiveSection from '../navbar'
 
 function Hero() {
   return (

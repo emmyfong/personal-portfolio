@@ -42,6 +42,7 @@
 .projects-table th,
 .projects-table td {
   padding: 1rem 1.5rem 1rem 0;
+  color: #1e293b;
 }
 
 .project-row {
@@ -56,6 +57,7 @@
 
 .project-name {
   font-weight: 500;
+  color: #1e293b;
 }
 
 .project-name:hover {

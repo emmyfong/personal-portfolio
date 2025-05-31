@@ -6,7 +6,7 @@
 }
 
 section {
-  min-height: 20vh; 
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,10 +15,12 @@ section {
 
 h1 {
   justify-content: left;
+  color: #0f172a;
 }
 
 p {
   width: 60%;
   font-size: 20px;
   text-align: left;
+  color: #0f172a;
 }
