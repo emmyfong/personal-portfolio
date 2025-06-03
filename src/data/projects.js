@@ -49,13 +49,12 @@ const projects = [
     {
         title: 'Tic-Tac-Toe AI',
         description: 'Implemented AI for extended Tic-Tac-Toe using MiniMax, Alpha-Beta Pruning, and Monte Carlo Search Tree to evaluate and optimize gameplay strategies.',
-        image: '/images/library-db.png',
+        image: new URL('../assets/ProjectImages/TTT/TTT2.png', import.meta.url).href,
         tech: ['React', 'FastAPI', 'SQLAlchemy'],
         featured: true,
         slug: 'tic-tac-toe',
-        github: 'https://github.com/emmyfong/library-db',
         details: 'Developed an AI engine for solving extended versions of Tic-Tac-Toe by implementing and comparing multiple search algorithms, including MiniMax, MiniMax with Alpha-Beta Pruning, and Monte Carlo Search Tree (MCST). Depth-cutoff versions of MiniMax and Alpha-Beta were implemented to balance decision quality with computational efficiency. A custom evaluation function was designed to assess board states by estimating potential winning configurations, improving the AI’s ability to select optimal moves. The AI consistently achieved optimal play, ensuring a win or draw against human opponents under standard conditions.',
-        moreImages: []
+        moreImages: [new URL('../assets/ProjectImages/TTT/TTT1.png', import.meta.url).href, new URL('../assets/ProjectImages/TTT/TTT2.png', import.meta.url).href, new URL('../assets/ProjectImages/TTT/TTT3.png', import.meta.url).href]
     },
     {
         title: 'Portfolio Website',
