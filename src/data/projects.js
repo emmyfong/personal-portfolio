@@ -54,6 +54,7 @@ const projects = [
         featured: true,
         slug: 'krill-krushers',
         github: 'https://github.com/emmyfong/KrillKrushers',
+        link: 'https://emmyfong.github.io/KrillKrushers/',
         details: 'Co-led the development of Krill Krushers, a 2D survival-style game built in Unity and recognized as the “Best Entertainment Hack” at SFU Surge x MLH’s 2024 StormHacks. Inspired by titles such as Vampire Survivors and League of Legends’ Swarm mode, the project focused on creating fast-paced, upgrade-based gameplay. Responsibilities included designing and implementing core game systems such as game state transitions (play, pause, death, level-up, restart), enemy spawner logic, and an upgrade selection mechanic. The upgrade system presents players with three randomized enhancements from a predefined pool, offering strategic depth and replayability. The project emphasized real-time responsiveness, polished UI elements, and engaging player progression loops.',
         moreImages: [ new URL('../assets/ProjectImages/KrillKrushers/KK1.png', import.meta.url).href,  new URL('../assets/ProjectImages/KrillKrushers/KK2.png', import.meta.url).href,  new URL('../assets/ProjectImages/KrillKrushers/KK3.png', import.meta.url).href]
     },
