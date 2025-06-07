@@ -1,15 +1,25 @@
 /* Project Data */
 
 const projects = [
+        {
+        title: 'F1 Track Simulator - In Progress',
+        description: '',
+        image: new URL('../assets/ProjectImages/SAM-2.png', import.meta.url).href,
+        tech: ['Python', 'NumPy', 'MatPlotLib', 'FastF1 API'],
+        featured: false,
+        slug: 'f1-track-simulator',
+        details: 'Implemented a brain tumor segmentation pipeline by fine-tuning Meta’s Segment Anything Model (SAM) using adapter modules in PyTorch, with the goal of improving segmentation accuracy on the BraTS medical imaging dataset. Developed and evaluated multiple prompt-based approaches—including bounding-box, point-based, and hybrid workflows—to optimize tumor region isolation. Performance was assessed using the Dice coefficient and Intersection over Union (IoU) metrics, demonstrating improvements over the SAM baseline. The project included the automation of data preprocessing and inference workflows in Python, with support for NIfTI medical imaging formats and integrated visualization tools to streamline model development and analysis.',
+        moreImages: [new URL('../assets/ProjectImages/SAM-1.png', import.meta.url).href, new URL('../assets/ProjectImages/SAM-2.png', import.meta.url).href, new URL('../assets/ProjectImages/SAM-3.png', import.meta.url).href]
+    },
     /* SAM Segmentation */
     {
         title: 'Brain Tumor Segmentation',
         description: 'Explored Meta\'s Segment Anything Models and tested different methods to segment brain tumors on the BraTS brain tumor dataset.',
         image: new URL('../assets/ProjectImages/SAM-2.png', import.meta.url).href,
-        tech: ['Python', 'PyTorch', 'SAM'],
+        tech: ['Python', 'PyTorch', 'NumPy', 'SAM'],
         featured: true,
         slug: 'brain-tumor-segmentation',
-        details: 'Implemented a brain tumor segmentation pipeline by fine-tuning Meta’s Segment Anything Model (SAM) using adapter modules in PyTorch, with the goal of improving segmentation accuracy on the BraTS medical imaging dataset. Developed and evaluated multiple prompt-based approaches—including bounding-box, point-based, and hybrid workflows—to optimize tumor region isolation. Performance was assessed using the Dice coefficient and Intersection over Union (IoU) metrics, demonstrating improvements over the SAM baseline. The project included the automation of data preprocessing and inference workflows in Python, with support for NIfTI medical imaging formats and integrated visualization tools to streamline model development and analysis.',
+        details: 'Currently developing a Formula 1 track simulation tool in Python, focused on modeling racetrack geometry and simulating vehicle motion. Custom circuits—including circular and pill-shaped tracks—are constructed using NumPy and visualized with Matplotlib. Motion logic is implemented using graph-based point collection and directional vector analysis to simulate realistic car movement. The project also integrates the FastF1 library to import real-world track data, enabling accurate visualizations and future support for data-driven racing line analysis and trajectory optimization.',
         moreImages: [new URL('../assets/ProjectImages/SAM-1.png', import.meta.url).href, new URL('../assets/ProjectImages/SAM-2.png', import.meta.url).href, new URL('../assets/ProjectImages/SAM-3.png', import.meta.url).href]
     },
     /* Library Database */
@@ -17,10 +27,11 @@ const projects = [
         title: 'Library Database',
         description: 'A full-stack library management system featuring a FastAPI backend and React frontend, with SQLAlchemy for relational database interaction.',
         image: new URL('../assets/ProjectImages/LibraryDB/LDB-3.png', import.meta.url).href,
-        tech: ['React', 'FastAPI', 'SQLAlchemy'],
+        tech: ['React', 'FastAPI', 'SQLAlchemy', 'JavaScript'],
         featured: true,
         slug: 'library-database',
         github: 'https://github.com/EvanDongChen/CMPT354-LibraryDataBase',
+        link: 'https://librarydatabaseproject.onrender.com/',
         details: 'Developed a full-stack web application for managing community library operations, including borrowing and donating books, user account creation, volunteer registration, and a community Q&A forum. The system was built using FastAPI for the backend and React for the frontend, with SQLAlchemy handling database communication. Responsibilities centered on backend development, including the design of a normalized relational database schema, implementation of secure user authentication, and development of robust API endpoints to support core application features. The project emphasized scalable architecture and clean separation between backend services and the user interface.',
         moreImages: [new URL('../assets/ProjectImages/LibraryDB/LDB-3.png', import.meta.url).href, new URL('../assets/ProjectImages/LibraryDB/LDB-1.png', import.meta.url).href, new URL('../assets/ProjectImages/LibraryDB/LDB-2.png', import.meta.url).href]
     },
@@ -56,16 +67,5 @@ const projects = [
         details: 'Developed an AI engine for solving extended versions of Tic-Tac-Toe by implementing and comparing multiple search algorithms, including MiniMax, MiniMax with Alpha-Beta Pruning, and Monte Carlo Search Tree (MCST). Depth-cutoff versions of MiniMax and Alpha-Beta were implemented to balance decision quality with computational efficiency. A custom evaluation function was designed to assess board states by estimating potential winning configurations, improving the AI’s ability to select optimal moves. The AI consistently achieved optimal play, ensuring a win or draw against human opponents under standard conditions.',
         moreImages: [new URL('../assets/ProjectImages/TTT/TTT1.png', import.meta.url).href, new URL('../assets/ProjectImages/TTT/TTT2.png', import.meta.url).href, new URL('../assets/ProjectImages/TTT/TTT3.png', import.meta.url).href]
     },
-    {
-        title: 'Portfolio Website',
-        description: 'Personal website with Vite + React + animations',
-        image: '/images/portfolio.png',
-        tech: ['React', 'CSS', 'Framer Motion'],
-        featured: false,
-        slug: 'portfolio-website',
-        github: 'https://github.com/emmyfong/portfolio',
-        details: 'Designed for showcasing my work interactively with a typewriter hero and particle background.',
-        moreImages: []
-    }
 ];
 export default projects

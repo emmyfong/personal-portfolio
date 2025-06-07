@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Archive from "./pages/Archive";
+import Experiences from "./pages/Experiences";
 
 function AppWrapper() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function AppWrapper() {
   const homeRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
+  const experiencesRef = useRef(null);
   // (add other refs as needed)
 
   // Function to smoothly scroll to About
@@ -42,7 +44,7 @@ function AppWrapper() {
             about: aboutRef,
             skills: skillsRef,
             projects: projectsRef,
-            // ...other sections
+            experiences: experiencesRef,
           }}
         />
       )}
@@ -66,6 +68,10 @@ function AppWrapper() {
 
               <div ref={projectsRef}>
                 <Projects />
+              </div>
+
+              <div ref={experiencesRef}>
+                <Experiences />
               </div>
             </>
           }

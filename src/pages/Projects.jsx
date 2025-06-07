@@ -27,8 +27,8 @@ export default function Projects() {
         <ProjectPopup project={selected} onClose={() => setSelected(null)} />
       )}
 
-      <div style={{ textAlign: "center", marginTop: "3rem" }}>
-        <Link to="/archive" className="btn">
+      <div className="project-btn" style={{ textAlign: "center", marginTop: "3rem" }}>
+        <Link to="/archive">
           See all projects →
         </Link>
       </div>

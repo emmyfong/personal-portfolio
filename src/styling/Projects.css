@@ -1,9 +1,10 @@
 .projects {
   background-color: #f9f9f9;
+  z-index: 2;
 }
 
 .projects h1 {
-  z-index: 1;
+  z-index: 2;
   margin-top: 1rem;
   color: #0f172a;
 }
@@ -23,4 +24,19 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+}
+
+.project-btn {
+  margin-bottom: 2rem;
+}
+
+.project-btn a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111827;
+}
+
+.project-btn a:hover {
+  text-decoration: underline;
 }
