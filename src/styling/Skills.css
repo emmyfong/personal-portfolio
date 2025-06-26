@@ -3,6 +3,12 @@
   text-align: center;
   background-color: #ffffff;
   position: relative;
+  min-height: 60vh;
+  z-index: 2;
+}
+
+.skills-section > h1 {
+  margin-top: 0;
 }
 
 .skills-section h1 {

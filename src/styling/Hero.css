@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  z-index: -2;
+  z-index: 1;
 }
 
 .particle-container {
@@ -33,7 +33,7 @@
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   text-align: center;
   color: white;
   padding: 2rem;
@@ -61,12 +61,17 @@
   margin-top: 1rem;
   animation: bounce 2s infinite;
   transition: transform 0.2s ease;
+  z-index: 20;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .down-arrow:hover {
   border: none;
   cursor: pointer;
   color: white;
+  transform: scale(1.1);
 }
 
 .down-arrow:focus {

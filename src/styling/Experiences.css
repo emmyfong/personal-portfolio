@@ -187,3 +187,11 @@
     left: -15px;
   }
 }
+
+.experiences {
+  background-color: #f9f9f9;
+  min-height: 60vh;
+  width: 100vw;
+  position: relative;
+  z-index: 1;
+}
