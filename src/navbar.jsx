@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 
 export default function Navbar({ scrollRefs = {} }) {
   const [activeSection, setActiveSection] = useState("home");
-  const [menuOpen, setMenuOpen] = useState(false);
   const indicatorRef = useRef(null);
 
   // Guarantee we always have an array of keys (e.g. ["home","about","skills", ...])
@@ -51,23 +50,15 @@ export default function Navbar({ scrollRefs = {} }) {
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
       setActiveSection(sectionId);
-      setMenuOpen(false); // close menu on click
     }
   };
 
   return (
     <nav className="navbar">
-      <button
-        className="hamburger"
-        aria-label="Toggle navigation menu"
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </button>
-      <ul className={`nav-list${menuOpen ? " open" : ""}`}>
+      <ul className="nav-list">
         <div className="indicator" ref={indicatorRef} />
+
+        {/* One <li> + <button> per section (home, about, skills, etc.) */}
         {sections.map((sectionId) => (
           <li key={sectionId}>
             <button
