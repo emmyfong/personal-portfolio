@@ -77,3 +77,36 @@
   font-size: 2rem;
   color: #0f172a;
 }
+
+@media (max-width: 600px) {
+  .skills-section {
+    padding: 2rem 0.5rem;
+  }
+  .skills-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .skills-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    overflow-x: visible;
+    white-space: normal;
+    padding-bottom: 0;
+    justify-content: center;
+  }
+  .skill-item {
+    width: 120px;
+    min-width: 100px;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  .skill-icon {
+    font-size: 1.5rem;
+  }
+}

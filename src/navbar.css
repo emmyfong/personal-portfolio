@@ -10,18 +10,20 @@
 
 /* Navbar container, centered at top */
 .navbar {
-  position: fixed;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgb(240, 240, 240);
-  padding: 0rem 1.5rem;
-  border-radius: 999px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: none;
+  width: 100vw;
+  border-radius: 0;
+  padding: 0 1rem;
+  margin: 0;
   z-index: 1000;
-
+  background-color: rgb(240, 240, 240);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 2rem;
   opacity: 0.95;
 }
@@ -79,4 +81,75 @@
 .nav-list li button:hover,
 .nav-list li a:hover {
   color: black;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1100;
+  background-color: none;
+}
+
+.hamburger span.bar {
+  display: block;
+  width: 28px;
+  height: 4px;
+  min-height: 4px ;
+  background: #0f172a;
+  margin: 4px 0;
+  transition: all 0.3s;
+  opacity: 1;
+  content: '';
+  background-color: none;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 1rem;
+    margin: 0;
+    border-radius: 0;
+    width: 100vw;
+    justify-content: flex-end;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    min-width: 100vw;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-radius: 0 0 12px 12px;
+    z-index: 1050;
+    padding: 0.5rem 0;
+  }
+  .nav-list.open {
+    display: flex;
+  }
+  .nav-list li button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 0;
+    color: #222;
+    background: none;
+  }
+  .indicator {
+    display: none;
+  }
 }

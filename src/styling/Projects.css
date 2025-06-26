@@ -46,3 +46,23 @@
 .project-btn a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 600px) {
+  .projects {
+    padding: 2rem 0.5rem;
+  }
+  .projects h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .projects-list {
+    gap: 1rem;
+  }
+  .project-btn {
+    margin-bottom: 1rem;
+  }
+  .project-btn a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
