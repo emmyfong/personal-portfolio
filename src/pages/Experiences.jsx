@@ -1,25 +1,74 @@
-import "../styling/Experiences.css"
-
+import "../styling/Experiences.css";
+import wicsLogo from "../assets/Logos/WiCS.png";
+//import experiences from "../data/experience";
 
 export default function Experiences() {
-    return (
-        <section id="experiences" className="experiences">
-            <h1>Experiences</h1>
+  //const { title, company, description, date } = experiences;
+  return (
+    <section id="experiences" className="experiences">
+      <h1>Experiences</h1>
 
-            <div className="timeline">
-                <div className="container left">
-                    <div className="content">
-                        <h2>2017</h2>
-                        <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-                    </div>
-                </div>
-                <div className="container right">
-                    <div className="content">
-                        <h2>2016</h2>
-                        <p>test...</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+      <div className="timeline">
+        <div className="container left-container">
+          <div className="logo-wrapper">
+            <img src={wicsLogo} />
+          </div>
+          <div className="text-box">
+            <h2>Test</h2>
+            <small>2018 - 2019</small>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa.{" "}
+            </p>
+            <span className="left-container-arrow"></span>
+          </div>
+        </div>
+
+        <div className="container right-container">
+          <div className="logo-wrapper">
+            <img src={wicsLogo} />
+          </div>
+          <div className="text-box">
+            <h2>Test</h2>
+            <small>2018 - 2019</small>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa.{" "}
+            </p>
+            <span className="right-container-arrow"></span>
+          </div>
+        </div>
+
+        <div className="container left-container">
+          <div className="logo-wrapper">
+            <img src={wicsLogo} />
+          </div>
+          <div className="text-box">
+            <h2>Test</h2>
+            <small>2018 - 2019</small>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa.{" "}
+            </p>
+            <span className="left-container-arrow"></span>
+          </div>
+        </div>
+
+        <div className="container right-container">
+          <div className="logo-wrapper">
+            <img src={wicsLogo} />
+          </div>
+          <div className="text-box">
+            <h2>Test</h2>
+            <small>2018 - 2019</small>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa.{" "}
+            </p>
+            <span className="right-container-arrow"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
