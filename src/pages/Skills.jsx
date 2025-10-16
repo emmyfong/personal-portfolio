@@ -1,53 +1,67 @@
 import '../styling/Skills.css';
 import { useState } from 'react';
 import {
-  FaPython, FaJava, FaReact, FaGitAlt, FaHtml5, FaCss3Alt, FaJs, FaLinux,
-  FaPalette, FaUnity, FaGithub, FaMicrosoft, FaCode
+  FaPython, FaReact, FaGitAlt, FaHtml5, FaCss3Alt, FaJs, FaLinux,
+  FaPalette, FaUnity, FaGithub, FaMicrosoft, FaCode, FaNodeJs, FaGlobe, FaJava 
 } from 'react-icons/fa';
 import {
   SiCplusplus, SiNextdotjs, SiFastapi, SiPytorch, SiJupyter, SiSqlite, SiBlender,
-  SiMongodb, SiTailwindcss,
+  SiMongodb, SiTailwindcss, SiFirebase, SiGooglecloud, SiFlask, SiExpress, 
+  SiSocketdotio, SiFigma, SiPycharm, SiAndroidstudio 
 } from 'react-icons/si';
 
 const skillsByDomain = {
-  'Software': [
+  'Programming Languages': [
     { name: 'Python', icon: FaPython },
-    { name: 'C++', icon: SiCplusplus },
+    { name: 'C/C++', icon: SiCplusplus },
+    { name: 'C#', icon: FaCode },
+    { name: 'Kotlin', icon: FaCode },
     { name: 'SQL', icon: SiSqlite },
-    { name: 'C', icon: FaCode },
-    { name: 'C# (Unity)', icon: FaCode },
-  ],
-  'Web Development': [
+    { name: 'JavaScript', icon: FaJs },
     { name: 'HTML', icon: FaHtml5 },
     { name: 'CSS', icon: FaCss3Alt },
-    { name: 'JavaScript', icon: FaJs },
+  ],
+  'Web Frameworks & Runtime': [
     { name: 'React', icon: FaReact },
     { name: 'Next.js', icon: SiNextdotjs },
+    { name: 'Node.js', icon: FaNodeJs },
+    { name: 'Flask', icon: SiFlask },
     { name: 'FastAPI', icon: SiFastapi },
+    { name: 'Express.js', icon: SiExpress },
     { name: 'Tailwind CSS', icon: SiTailwindcss },
+  ],
+  'Databases & Cloud': [
     { name: 'MongoDB', icon: SiMongodb },
+    { name: 'SQLite', icon: SiSqlite },
+    { name: 'Google Cloud Platform', icon: SiGooglecloud },
+    { name: 'Firebase', icon: SiFirebase },
   ],
-  'AI / Data': [
-    { name: 'Python', icon: FaPython },
+  'AI / Data & Libraries': [
     { name: 'PyTorch', icon: SiPytorch },
-    { name: 'Jupyter', icon: SiJupyter },
-    { name: 'SQL', icon: SiSqlite },
+    { name: 'Jupyter Notebooks', icon: SiJupyter },
+    { name: 'Pydantic', icon: FaCode },
+    { name: 'Socket.IO', icon: SiSocketdotio },
   ],
-  'Creative & Tools': [
+  'Tools & Other Software': [
     { name: 'Git', icon: FaGitAlt },
     { name: 'GitHub', icon: FaGithub },
+    { name: 'GitLab', icon: FaGithub },
     { name: 'Linux', icon: FaLinux },
+    { name: 'Android Studio', icon: SiAndroidstudio },
+    { name: 'Unity', icon: FaUnity },
     { name: 'VS Code', icon: FaCode },
     { name: 'Visual Studio', icon: FaCode },
+    { name: 'PyCharm', icon: SiPycharm },
     { name: 'Blender', icon: SiBlender },
+    { name: 'Figma', icon: SiFigma },
     { name: 'Adobe CC', icon: FaPalette },
-    { name: 'Microsoft Office', icon: FaMicrosoft },
-    { name: 'Unity', icon: FaUnity },
+    { name: 'Microsoft Office Suite', icon: FaMicrosoft },
+    { name: 'Chinese (Proficient)', icon: FaGlobe },
   ]
 };
 
 function Skills() {
-  const [activeTab, setActiveTab] = useState('Software');
+  const [activeTab, setActiveTab] = useState('Programming Languages');
 
   return (
     <section id="skills" className="skills-section">
