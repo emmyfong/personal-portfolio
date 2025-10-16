@@ -49,10 +49,10 @@
 .skills-grid {
   display: flex;
   gap: 1.5rem;
-  overflow-x: auto;
-  white-space: nowrap;
+  flex-wrap: wrap;
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
+  justify-content: center;
 }
 
 .skill-item {

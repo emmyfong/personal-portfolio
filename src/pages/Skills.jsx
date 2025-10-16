@@ -56,7 +56,6 @@ const skillsByDomain = {
     { name: 'Figma', icon: SiFigma },
     { name: 'Adobe CC', icon: FaPalette },
     { name: 'Microsoft Office Suite', icon: FaMicrosoft },
-    { name: 'Chinese (Proficient)', icon: FaGlobe },
   ]
 };
 
