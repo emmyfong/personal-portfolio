@@ -1,35 +1,44 @@
-import Particle from '../components/Particle';
 import '../styling/Hero.css';
 import profilePic from '../assets/profile.png';
 import { Typewriter } from 'react-simple-typewriter';
 import { BsArrowDown } from 'react-icons/bs';
+import { portfolioData } from '../data/portfolioData';
+import { motion } from 'framer-motion';
 
 function Hero({ scrollToAbout }) {
   return (
     <section className="hero">
-      <div className="particle-container">
-        <Particle />
-      </div>
 
-      <div className="hero-content">
-        <img src={profilePic} alt="emmy fong" className="hero-img" />
-        <h1>Emmy Fong</h1>
-        <h2>
-          <Typewriter
-            words={["Student", "Full-Stack Developer", "Game Developer", "Researcher"]}
-            loop={0}
-            cursor
-            cursorStyle='|'
-            typeSpeed={70}
-            deleteSpeed={50}
-          />
-        </h2>
+      <motion.div
+        className="hero-content glass-card"
+        initial={{ opacity: 0, scale: 0.95, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="hero-grid">
+          <div className="hero-left">
+            <img src={profilePic} alt="emmy fong" className="hero-img" />
+            <h1>Emmy Fong</h1>
+            <h2>
+              <Typewriter
+                words={portfolioData.titles}
+                loop={0}
+                cursor
+                cursorStyle='|'
+                typeSpeed={70}
+                deleteSpeed={50}
+              />
+            </h2>
+          </div>
 
-        {/* When clicked, this calls scrollToAbout() (passed from App) */}
-        <div className="down-arrow" onClick={scrollToAbout}>
-          <BsArrowDown size={32} />
+          <div className="hero-right">
+            {portfolioData.bio.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
         </div>
-      </div>
+
+      </motion.div>
     </section>
   );
 }

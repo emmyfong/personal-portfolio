@@ -1,98 +1,165 @@
 .project-popup {
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-popup-overlay);
+  backdrop-filter: blur(8px);
+  z-index: 3000;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1rem;
-  z-index: 1000;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .popup-content {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  max-width: 800px;
   width: 100%;
-  max-width: 900px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-.popup-content h2 {
-  margin: 0;
-  font-size: 2rem;
-  text-align: center;
-  color: #111827;
-}
-
-.popup-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.popup-details p {
-  margin: 0 0 1rem;
-  line-height: 1.6;
-  color: #4b5563;
-  text-align: left;
-  font-size: 1rem;
-}
-
-.popup-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-}
-
-.popup-gallery::-webkit-scrollbar {
-  height: 8px;
-}
-.popup-gallery::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
-.thumbnail {
-  flex: 0 0 auto;
-  width: 180px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.thumbnail:hover {
-  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  color: var(--color-text-primary);
 }
 
 .close-button {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
   border: none;
-  font-size: 1.5rem;
-  color: #6b7280;
+  font-size: 2rem;
+  color: var(--color-text-secondary);
   cursor: pointer;
+  padding: 0;
   line-height: 1;
-  padding: 0.25rem;
+  transition: color var(--transition-fast);
 }
 
 .close-button:hover {
-  color: #111827;
+  color: var(--color-accent);
+  background: none;
+  border: none;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--color-accent);
+  font-size: 2rem;
+  padding-right: 2rem;
+  /* space for close button */
+}
+
+.popup-details {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+.project-popup-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-popup {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius-sm);
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--color-accent);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.btn-popup:hover {
+  background-color: rgba(56, 189, 248, 0.2);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+}
+
+.btn-code:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.popup-gallery.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 1rem;
+}
+
+.bento-item {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.bento-item:hover img {
+  transform: scale(1.05);
+}
+
+.main-image {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.sub-image-0 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.sub-image-1 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.sub-image-2 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.sub-image-3 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+@media (max-width: 768px) {
+  .popup-gallery.bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+  }
+
+  .main-image {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-popup {
+    padding: 1rem;
+  }
+
+  .popup-content {
+    padding: 1.5rem;
+  }
 }

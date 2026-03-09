@@ -1,0 +1,54 @@
+.education-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.edu-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.edu-header h2 {
+    margin: 0;
+    color: var(--color-accent);
+    font-size: 1.5rem;
+}
+
+.edu-degree {
+    margin: 0;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.edu-date {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-sm);
+}
+
+.edu-desc {
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .edu-header {
+        flex-direction: column;
+    }
+}

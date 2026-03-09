@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import projects from '../data/projects'
+import { portfolioData } from '../data/portfolioData'
 import ProjectPopup from '../components/ProjectPopup'
 import '../styling/Archive.css'
 
@@ -27,7 +27,7 @@ export default function Archive() {
             </tr>
           </thead>
           <tbody>
-            {projects.map((project, i) => (
+            {portfolioData.projects.map((project, i) => (
               <tr
                 key={i}
                 onClick={() => setSelectedProject(project)}

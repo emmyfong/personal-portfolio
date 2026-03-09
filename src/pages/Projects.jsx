@@ -1,37 +1,41 @@
-/* Connects the Projects section to the homepage */
-
-import projects from '../data/projects'
+import '../styling/Projects.css'
+import { portfolioData } from '../data/portfolioData';
 import ProjectCard from "../components/ProjectCard.jsx";
 import ProjectPopup from "../components/ProjectPopup.jsx";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import '../styling/Projects.css'
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const [selected, setSelected] = useState(null);
 
+  // Display all projects as requested
+  const displayProjects = portfolioData.projects;
+
   return (
     <section id="projects" className='projects'>
-      <h1>Featured Projects</h1>
-      {projects
-        .filter((p) => p.featured)
-        .map((p) => (
+      <motion.h1
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        Featured Projects
+      </motion.h1>
+
+      <div className="projects-grid">
+        {displayProjects.map((p, i) => (
           <ProjectCard
-            key={p.slug}
+            key={i}
+            index={i}
             project={p}
             onReadMore={(proj) => setSelected(proj)}
           />
         ))}
+      </div>
 
       {selected && (
         <ProjectPopup project={selected} onClose={() => setSelected(null)} />
       )}
-
-      <div className="project-btn" style={{ textAlign: "center", marginTop: "3rem" }}>
-        <Link to="/archive">
-          See all projects →
-        </Link>
-      </div>
     </section>
   );
 }

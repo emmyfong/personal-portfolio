@@ -1,11 +1,10 @@
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 
 import { loadFull } from "tsparticles";
 export default function Particle() {
   const [init, setInit] = useState(false);
   useEffect(() => {
-    console.log("init");
     initParticlesEngine(async (engine) => {
       await loadFull(engine);
     }).then(() => {
@@ -13,17 +12,15 @@ export default function Particle() {
     });
   }, []);
 
-  const particlesLoaded = () => {
-  };
+  const particleColor = "#ffffff";
 
   return (
     <>
       {init && (
         <Particles
           id="tsparticles"
-          particlesLoaded={particlesLoaded}
           style={{
-            zIndex: 1,
+            zIndex: -1,
           }}
           options={{
             fpsLimit: 120,
@@ -37,20 +34,20 @@ export default function Particle() {
               },
               modes: {
                 grab: {
-                  distance: 100, 
+                  distance: 100,
                   links: { opacity: 0.7 }
                 },
               },
             },
             particles: {
               color: {
-                value: "#ffffff",
+                value: particleColor,
               },
               links: {
-                color: "#ffffff",
-                distance: 150,
+                color: particleColor,
+                distance: 120,
                 enable: true,
-                opacity: 0.5,
+                opacity: 0.3,
                 width: 1,
               },
               move: {
@@ -60,7 +57,7 @@ export default function Particle() {
                   default: "bounce",
                 },
                 random: false,
-                speed: 1.8,
+                speed: 0.6,
                 straight: false,
               },
               number: {
@@ -68,16 +65,21 @@ export default function Particle() {
                   enable: true,
                   area: 800,
                 },
-                value: 200,
+                value: 150,
               },
               opacity: {
-                value: 0.5,
+                value: { min: 0.1, max: 0.5 },
+                animation: {
+                  enable: true,
+                  speed: 1,
+                  sync: false,
+                }
               },
               shape: {
-                type: "triangle",
+                type: "circle",
               },
               size: {
-                value: { min: 1, max: 2 },
+                value: { min: 1, max: 3 },
               },
             },
             detectRetina: true,

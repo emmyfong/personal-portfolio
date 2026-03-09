@@ -5,11 +5,14 @@ import { useEffect, useRef, useState } from "react";
 
 import Navbar from "./navbar";
 import Hero from "./pages/Hero";
-import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Archive from "./pages/Archive";
 import Experiences from "./pages/Experiences";
+import Education from "./pages/Education";
+import Sidebar from "./components/Sidebar";
+import Particle from "./components/Particle";
+import Intro from "./components/Intro";
 
 function AppWrapper() {
   const location = useLocation();
@@ -21,30 +24,35 @@ function AppWrapper() {
   }, [location.pathname]);
 
   // Create refs for each section
-  const aboutRef = useRef(null);
   const homeRef = useRef(null);
   const skillsRef = useRef(null);
-  const projectsRef = useRef(null);
   const experiencesRef = useRef(null);
+  const educationRef = useRef(null);
+  const projectsRef = useRef(null);
   // (add other refs as needed)
 
-  // Function to smoothly scroll to About
-  const scrollToAbout = () => {
-    if (aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+  // Function to smoothly scroll to Skills
+  const scrollToNext = () => {
+    if (skillsRef.current) {
+      skillsRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <>
+      <Intro />
+      <div className="global-particles">
+        <Particle />
+      </div>
+      <Sidebar />
       {showNavbar && (
         <Navbar
           scrollRefs={{
             home: homeRef,
-            about: aboutRef,
             skills: skillsRef,
-            projects: projectsRef,
             experiences: experiencesRef,
+            education: educationRef,
+            projects: projectsRef,
           }}
         />
       )}
@@ -55,23 +63,23 @@ function AppWrapper() {
           element={
             <>
               <div ref={homeRef}>
-                <Hero scrollToAbout={scrollToAbout} />
-              </div>
-
-              <div ref={aboutRef}>
-                <About />
+                <Hero scrollToAbout={scrollToNext} />
               </div>
 
               <div ref={skillsRef}>
                 <Skills />
               </div>
 
-              <div ref={projectsRef}>
-                <Projects />
-              </div>
-
               <div ref={experiencesRef}>
                 <Experiences />
+              </div>
+
+              <div ref={educationRef}>
+                <Education />
+              </div>
+
+              <div ref={projectsRef}>
+                <Projects />
               </div>
             </>
           }
