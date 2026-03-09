@@ -12,8 +12,6 @@ import Experiences from "./pages/Experiences";
 import Education from "./pages/Education";
 import Sidebar from "./components/Sidebar";
 import Particle from "./components/Particle";
-import Intro from "./components/Intro";
-
 function AppWrapper() {
   const location = useLocation();
   const [showNavbar, setShowNavbar] = useState(true);
@@ -40,7 +38,6 @@ function AppWrapper() {
 
   return (
     <>
-      <Intro />
       <div className="global-particles">
         <Particle />
       </div>
