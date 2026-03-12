@@ -10,7 +10,7 @@ export const portfolioData = {
   socials: {
     github: "https://github.com/emmyfong",
     linkedin: "https://www.linkedin.com/in/emmy-fong-0ab710214/",
-    resume: "/resume.pdf"
+    resume: "/Resume.pdf"
   },
 
   // --- Skills ---
@@ -164,3 +164,4 @@ export const portfolioData = {
     }
   ]
 };
+
