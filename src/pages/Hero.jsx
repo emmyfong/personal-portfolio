@@ -40,7 +40,7 @@ export default function Hero({ isMobile }) {
           letterSpacing: -1, lineHeight: 1.1, color: "#e3e9f7",
         }}
       >
-        Technology Enthusiast
+        About Me
       </motion.h2>
 
       <motion.p
