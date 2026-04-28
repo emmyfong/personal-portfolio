@@ -10,7 +10,7 @@ export const portfolioData = {
   socials: {
     github: "https://github.com/emmyfong",
     linkedin: "https://www.linkedin.com/in/emmy-fong-0ab710214/",
-    resume: "/resume.pdf"
+    resume: "https://raw.githubusercontent.com/emmyfong/personal-portfolio/main/Resume.pdf"
   },
 
   // --- Skills ---
@@ -49,14 +49,14 @@ export const portfolioData = {
       organization: 'Whitebox Coworking',
       date: 'May 2025 - Sep 2025',
       description: 'Engineered full-stack management system with multi-tier space admin portal. Optimized media delivery by 40% via GridFS and async APIs for location-specific asset management. Hardened system security using origin-specific CORS middleware and automated data seeding utilities.',
-      tags: ['FastAPI', 'MongoDB', 'Next.js', 'Security']
+      tags: ['FastAPI', 'MongoDB', 'Next.js', 'Full Stack Development']
     },
     {
       role: 'Research Assistant',
       organization: 'Simon Fraser University',
       date: 'Sep 2024 - Dec 2024',
       description: 'Prototyped AR architectural optimizations for medical education, focusing on latency and QoE metrics. Reduced interaction bottlenecks by balancing local compute with network-bound bandwidth parameters. Implemented code-partitioning offloading and Dynamic Adaptive MAR to stabilize high-fidelity rendering.',
-      tags: ['AR', 'Optimization', 'Research']
+      tags: ['AR/VR', 'Netowrk Optimization', 'Research']
     },
 
   ],
@@ -76,8 +76,8 @@ export const portfolioData = {
     {
       title: 'MAPF Benchmarking Suite',
       description: 'A modular pipeline comparing CBS vs. SAT-based solvers for Multi-Agent Path Finding with 10–30% obstacle density.',
-      image: '',
-      tech: ['Python', 'PyGame', 'Algorithms'],
+      image: new URL('../assets/ProjectImages/MAPF/MAPF1.png', import.meta.url).href,
+      tech: ['Python', 'PyGame', 'A*', 'SAT Solvers', 'CBS'],
       date: 'Dec 2025',
       github: 'https://github.com/AoiKumo31/MAPF-SAT-Benchmark',
       details: 'Built modular pipeline comparing CBS vs. SAT-based solvers with 10–30% obstacle density generation. Developed PyGame visualizer and collision validator to verify vertex/edge constraints across agent paths. Analyzed scalability for 2–20 agents, identifying phase transitions where SAT outperforms search methods.',
@@ -85,19 +85,18 @@ export const portfolioData = {
     {
       title: 'Multi-Agent Path Finding (MAPF) Solvers',
       description: 'Implementation of Prioritized Planning and CBS algorithms with Disjoint Splitting optimizations.',
-      image: '',
-      tech: ['Python', 'Algorithms', 'Optimization'],
+      image: new URL('../assets/ProjectImages/MAPF/MAPF2.png', import.meta.url).href,
+      tech: ['Python', 'CBS', 'Disjoint Splitting', 'Optimization'],
       date: 'Oct 2025',
       details: 'Implemented Prioritized Planning, Conflict-Based Search (CBS), and CBS with Disjoint Splitting algorithms. Reduced high-level node expansion by 40% by engineering Disjoint Splitting as a search-space optimization. Designed edge-case test instances to prove the incompleteness and suboptimality of decoupled solvers formally.',
     },
     {
       title: 'Personal Finance App',
       description: 'A mobile application for secure, real-time personal finance tracking, built using modern Android development principles.',
-      image: new URL('../assets/ProjectImages/FinanceApp-1.png', import.meta.url).href,
+      image: new URL('../assets/ProjectImages/PFApp/PF3.png', import.meta.url).href,
       tech: ['Android Studio', 'Kotlin', 'Firebase', 'Jetpack Compose', 'MVVM'],
-      date: 'Sep 2025',
-      github: '',
-      details: 'Engineered reactive, declarative UI using MVVM architecture and Jetpack Compose across 3+ data layers. Architected NoSQL schema with Firebase Firestore and Authentication for real-time transaction persistence. Programmed core logic for manual entry logging, automated cash flow calculation, and dashboard visualization.',
+      github: 'https://github.com/emmyfong/PersonalFinanceApp',
+      details: 'Developed a feature-rich personal finance application for Android using Kotlin and Android Studio. The architecture was based on the industry-standard Model-View-ViewModel (MVVM) pattern, utilizing Jetpack Compose for a reactive and declarative user interface across three distinct layers (UI, ViewModel, Repository). The application features secure, real-time transaction data persistence using a NoSQL data model implemented with Firebase Authentication and Firestore. This model was structured across two main collections to efficiently handle user accounts and transaction records. Key functionalities included manual transaction logging, net cash flow calculation, and a comprehensive dashboard for data visualization.',
     },
     {
       title: 'Library Database',
@@ -113,7 +112,7 @@ export const portfolioData = {
       description: 'In Progress F1 Analytics using Python, Next.js, Supabase, and FastF1 API.',
       image: '',
       tech: ['Python', 'Next.js', 'SupaBase', 'FastF1 API'],
-      details: 'Currently in progress...',
+      details: 'In Progress F1 Analytics using Python, Next.js, Supabase, and FastF1 API.',
     },
     {
       title: 'Witch Dog',
@@ -125,17 +124,9 @@ export const portfolioData = {
       details: 'Designed and implemented a complete real-time multiplayer trivia game. The project\'s backend, using Node.js/Express.js, was coupled with a Socket.IO WebSocket layer, which was critical for low-latency, real-time communication. This layer standardized over 10 core events to manage game state synchronization across 4 concurrent player clients. The game’s core loop was enhanced by integrating the Google Gemini API to dynamically generate unique trivia questions on demand, ensuring virtually endless and fresh content. The frontend was a robust React/TypeScript application with a dedicated client-side state management system to handle WebSocket persistence and manage transitions across more than 5 distinct game screens.',
     },
     {
-      title: 'Personal Finance App',
-      description: 'A mobile application for secure, real-time personal finance tracking, built using modern Android development principles.',
-      image: new URL('../assets/ProjectImages/FinanceApp-1.png', import.meta.url).href,
-      tech: ['Android Studio', 'Kotlin', 'Firebase', 'Jetpack Compose', 'MVVM'],
-      github: '',
-      details: 'Developed a feature-rich personal finance application for Android using Kotlin and Android Studio. The architecture was based on the industry-standard Model-View-ViewModel (MVVM) pattern, utilizing Jetpack Compose for a reactive and declarative user interface across three distinct layers (UI, ViewModel, Repository). The application features secure, real-time transaction data persistence using a NoSQL data model implemented with Firebase Authentication and Firestore. This model was structured across two main collections to efficiently handle user accounts and transaction records. Key functionalities included manual transaction logging, net cash flow calculation, and a comprehensive dashboard for data visualization.',
-    },
-    {
       title: 'Chord Breaker',
       description: 'A music-based combat rhythm game engineered using the Unity and C#, centered around music theory concepts.',
-      image: new URL('../assets/ProjectImages/ChordBreaker-1.png', import.meta.url).href,
+      image: '',
       tech: ['Unity', 'C#', 'Game Development', 'Music Theory'],
       link: 'https://angrycow05.itch.io/chord-breaker',
       details: 'A game development project utilizing the Unity and C# to create a unique rhythm-based combat experience. The core gameplay loop was engineered using a singleton pattern for central game management and state control. A custom inventory UI system was designed and implemented for player interaction and item management. The most distinct feature was the creation of the main combat loop, which functions essentially as a music editor grounded in fundamental music theory principles, allowing for complex, music-driven interaction and challenge.',
@@ -173,3 +164,4 @@ export const portfolioData = {
     }
   ]
 };
+

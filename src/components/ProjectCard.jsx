@@ -2,7 +2,7 @@ import '../styling/ProjectCard.css'
 import { motion } from 'framer-motion';
 
 export default function ProjectCard({ project, onReadMore, index }) {
-    const { title, image } = project;
+    const { title, image, description, tech } = project;
 
     return (
         <motion.div
@@ -23,8 +23,18 @@ export default function ProjectCard({ project, onReadMore, index }) {
                     <span>View Details</span>
                 </div>
             </div>
-            <div className="project-card-title">
-                <h3>{title}</h3>
+            <div className="project-card-content">
+                <div className="project-card-title">
+                    <h3>{title}</h3>
+                </div>
+                {description && <p className="project-card-description">{description}</p>}
+                {tech && (
+                    <div className="project-tags">
+                        {tech.map((t, j) => (
+                            <span key={j} className="tag-pill">{t}</span>
+                        ))}
+                    </div>
+                )}
             </div>
         </motion.div>
     );
